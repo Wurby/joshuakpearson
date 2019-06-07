@@ -7,6 +7,7 @@ import {
   MatCardModule,
   MatListModule,
   MatDividerModule,
+  MatTabsModule,
 } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,14 @@ import { SideNavContentComponent } from './side-nav-content/side-nav-content.com
 import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
+import { CareerComponent } from './about/career/career.component';
+import { HobbiesComponent } from './about/hobbies/hobbies.component';
+import { GoalsComponent } from './about/goals/goals.component';
+import { OnlineComponent } from './contact/online/online.component';
+import { PhysicalComponent } from './contact/physical/physical.component';
+import { FormComponent } from './contact/form/form.component';
+import { ProfessionalComponent } from './projects/professional/professional.component';
+import { PersonalComponent } from './projects/personal/personal.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +36,14 @@ import { ContactComponent } from './contact/contact.component';
     AboutComponent,
     ProjectsComponent,
     ContactComponent,
+    CareerComponent,
+    HobbiesComponent,
+    GoalsComponent,
+    OnlineComponent,
+    PhysicalComponent,
+    FormComponent,
+    ProfessionalComponent,
+    PersonalComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +55,7 @@ import { ContactComponent } from './contact/contact.component';
     MatCardModule,
     MatListModule,
     MatDividerModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
