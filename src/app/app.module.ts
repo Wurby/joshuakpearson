@@ -8,6 +8,9 @@ import {
   MatListModule,
   MatDividerModule,
   MatTabsModule,
+  MatStepperModule,
+  MatIcon,
+  MatIconModule,
 } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -56,6 +59,8 @@ import { PersonalComponent } from './projects/personal/personal.component';
     MatListModule,
     MatDividerModule,
     MatTabsModule,
+    MatStepperModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

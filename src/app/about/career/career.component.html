@@ -1,3 +1,136 @@
-<p>
-  career works!
-</p>
+<mat-card class="default-card">
+  <mat-card-header>
+    <mat-card-title>My Career Path</mat-card-title>
+  </mat-card-header>
+  <mat-card-content
+    >Check out some of the things I have done on my career path below, and
+    follow my timeline. Starting with some highlights of my most recent work to
+    my oldest, check out what I've done from year to year.
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="default-card">
+  <mat-card-header>
+    <mat-card-title>Timeline</mat-card-title>
+    <mat-card-subtitle>A timeline of my career path</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-vertical-stepper #stepper>
+      <mat-step label="2019">
+        <p>
+          I started a business. Tiel Apps. Details can be found in my projects
+          section as they develop. This is a general app development project.
+        </p>
+        <p>
+          Angular was a primary focus this year. I developed my angular skills
+          by learning the material and ionic libraries.
+        </p>
+
+        <mat-divider></mat-divider>
+        <mat-toolbar-row>
+          <span></span>
+          <span style="flex: 1 3 auto"></span>
+
+          <mat-divider [vertical]="true"> </mat-divider>
+
+          <button mat-stroked-button color="primary" matStepperNext>
+            Next
+          </button>
+        </mat-toolbar-row>
+      </mat-step>
+
+      <mat-step label="2018">
+        <p>
+          Begin working as a quality assuarance engineer, learned cypress and
+          automated and manual test case writing. Learned e2e, integration, and
+          unit testing practices. Began working on an angular app with
+          SaltStack.
+        </p>
+        <p>
+          Ended work with App Raptors. All projects were either scrapped or
+          ended by the clients, or clients decided to not progress further.
+        </p>
+        <mat-divider></mat-divider>
+        <mat-toolbar-row>
+          <span></span>
+          <span style="flex: 1 3 auto"></span>
+
+          <button mat-stroked-button color="primary" matStepperPrevious>
+            Previous
+          </button>
+          <mat-divider [vertical]="true"> </mat-divider>
+          <button mat-stroked-button color="primary" matStepperNext>
+            Next
+          </button>
+        </mat-toolbar-row>
+      </mat-step>
+
+      <mat-step label="2017">
+        <p>
+          Began working at app raptors, and continued working with freecodecamp.
+          Stopped freecodecamp when curriculum significantly changed.
+        </p>
+        <p>
+          Initial projects at app raptors were a custom worpress theme and a
+          code rescue. Code rescue involved debugging a google maps integration
+          in a php app developed by a chop shop.
+        </p>
+        <mat-divider> </mat-divider>
+
+        <mat-toolbar-row>
+          <span></span>
+          <span style="flex: 1 3 auto"></span>
+
+          <button mat-stroked-button color="primary" matStepperPrevious>
+            Previous
+          </button>
+          <mat-divider [vertical]="true"> </mat-divider>
+          <button mat-stroked-button color="primary" matStepperNext>
+            Next
+          </button>
+        </mat-toolbar-row>
+      </mat-step>
+
+      <mat-step label="2016">
+        <p>
+          Began learning web development through
+          <a href="https://freecodecamp.com/wurby" target="none"
+            >freecodecamp</a
+          >
+          and dabbling in some minor
+          <a href="codepen.io/wurby" target="none">codepen</a>. Spent roughly 10
+          hours a week progressing through the problems and work. Codeacademy
+          and other misc. tutorials. Dabbled in android app development and
+          struggled to find the right path to learn. Ended on freecodecamp.
+          Excellent resource.
+        </p>
+        <mat-divider> </mat-divider>
+
+        <mat-toolbar-row>
+          <span></span>
+          <span style="flex: 1 3 auto"></span>
+
+          <button mat-stroked-button color="primary" matStepperPrevious>
+            Previous
+          </button>
+          <mat-divider [vertical]="true"> </mat-divider>
+          <button mat-stroked-button color="primary" (click)="reset(stepper)">
+            Present Year
+          </button>
+        </mat-toolbar-row>
+      </mat-step>
+
+      <!-- Icon Overrides -->
+
+      <ng-template matStepperIcon="edit">
+        <mat-icon>keyboard_arrow_down</mat-icon>
+      </ng-template>
+      <ng-template matStepperIcon="number">
+        <mat-icon>keyboard_arrow_down</mat-icon>
+      </ng-template>
+      <ng-template matStepperIcon="active">
+        <mat-icon>keyboard_arrow_up</mat-icon>
+      </ng-template>
+    </mat-vertical-stepper>
+  </mat-card-content>
+</mat-card>

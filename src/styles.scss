@@ -38,6 +38,12 @@ body {
 body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+  color: #a3a3a3;
 }
 
 // desktop view
@@ -45,6 +51,7 @@ body {
   .default-card {
     width: 40%;
     margin: 1em auto;
+    @include mat-elevation(4);
   }
 }
 
@@ -53,5 +60,6 @@ body {
   .default-card {
     width: 70%;
     margin: 1em auto;
+    @include mat-elevation(4);
   }
 }
