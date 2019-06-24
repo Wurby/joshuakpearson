@@ -1,7 +1,7 @@
 <mat-card class="default-card">
   <mat-card-header>
     <mat-card-title>Hobbies</mat-card-title>
-    <mat-card-subtitle>Here are several of my hobbies</mat-card-subtitle>
+    <mat-card-subtitle>Here are three of my favorite hobbies</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <p>
@@ -23,11 +23,11 @@
     <br />
     <img
       mat-card-image
-      [src]="photo[this.index].url"
-      [alt]="photo[this.index].description"
-      (click)="changePhoto()"
+      [src]="astroPhoto[this.photoIndex].url"
+      [alt]="astroPhoto[this.photoIndex].description"
+      (click)="changePhoto('astro')"
     />
-    <p style="color: #aaaaaa">{{ photo[this.index].description }}</p>
+    <p style="color: #aaaaaa">{{ astroPhoto[this.photoIndex].description }}</p>
     <mat-divider> </mat-divider>
     <br />
     <p>
@@ -37,18 +37,102 @@
       and patience. I think they're great skills to have.
     </p>
   </mat-card-content>
-  <button mat-raised-button color="primary" (click)="changePhoto()">
+  <button mat-raised-button color="primary" (click)="changePhoto('astro')">
     Change Photo
   </button>
 </mat-card>
 
 <mat-card class="default-card">
   <mat-card-header>
-    <mat-card-title>title</mat-card-title>
-    <mat-card-subtitle>subtitle</mat-card-subtitle>
+    <mat-card-title>Cooking</mat-card-title>
+    <mat-card-subtitle>I like to cook a variety of food</mat-card-subtitle>
   </mat-card-header>
-  <mat-card-content> </mat-card-content>
-  <mat-card-actions>
-    <button mat-button></button>
-  </mat-card-actions>
+  <mat-card-content>
+    <mat-divider> </mat-divider>
+    <br />
+    <img
+      mat-card-image
+      [src]="foodPhoto[this.foodIndex].url"
+      [alt]="foodPhoto[this.foodIndex].description"
+      (click)="changePhoto('food')"
+    />
+    <p style="color: #aaaaaa">{{ foodPhoto[this.foodIndex].description }}</p>
+    <mat-divider> </mat-divider>
+    <br />
+    <p>
+      Cooking has always been a major part of my life. I spend a lot of time
+      trying new things, and I really mean <em>trying new things</em>. I
+      expiriment, invent new recipes, and play with basic ingredients. When I
+      try a food from another culture, I don't just follow a simple recipe, I
+      take my time understanding it, and put my own twist into it and subisitute
+      similar ingredients. You can see some of the more simple and complex
+      dishes I have recently made above. I love the art of cooking. Especially
+      my cast iron.
+    </p>
+  </mat-card-content>
+  <button mat-raised-button color="primary" (click)="changePhoto('food')">
+    Change Photo
+  </button>
+</mat-card>
+
+<mat-card class="default-card">
+  <mat-card-header>
+    <mat-card-title>Hammock Camping</mat-card-title>
+    <mat-card-subtitle
+      >I spent more money in the first half of 2019 on camping gear than on
+      food.</mat-card-subtitle
+    >
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      Hammock camping is a great way to go into the wild and leave little to no
+      trace and enjoy the absolute beauty around us. Being able to find a
+      natural water source, a couple trees, and some nice weather to love is an
+      excellent way to spend a weekend. Relaxing and finding the time to unwind
+      and practice some photography and setting up a tri-pod is one of my
+      favorite ways to spend a weekend. A simple list of what I take on a trip
+      can be found below. This is what you'd find in my backpack on any given
+      trip.
+    </p>
+    <app-tree></app-tree>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="default-card">
+  <mat-card-header>
+    <mat-card-title>More Hobbies!</mat-card-title>
+    <mat-card-subtitle
+      >I have more than the above three, here's an uncomprehensive
+      list</mat-card-subtitle
+    >
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item
+        ><button mat-icon-button disabled></button>Painting</mat-list-item
+      >
+
+      <mat-list-item
+        ><button mat-icon-button disabled></button>Mountain
+        Biking</mat-list-item
+      >
+
+      <mat-list-item
+        ><button mat-icon-button disabled></button>Disc Golf</mat-list-item
+      >
+
+      <mat-list-item
+        ><button mat-icon-button disabled></button>Piano and
+        Guitar</mat-list-item
+      >
+
+      <mat-list-item
+        ><button mat-icon-button disabled></button>Sleeping</mat-list-item
+      >
+
+      <mat-list-item
+        ><button mat-icon-button disabled></button>VR Video Games</mat-list-item
+      >
+    </mat-list>
+  </mat-card-content>
 </mat-card>

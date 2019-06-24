@@ -9,11 +9,21 @@
       </mat-card-subtitle></span
     >
     <span style="flex: 1 1 auto"></span>
-    <span><img matCardImg src=""/></span>
+    <span
+      ><img
+        mat-card-avatar
+        src="https://wurbys3.s3.us-east-2.amazonaws.com/me+professional.jpg"
+    /></span>
   </mat-card-header>
   <mat-card-content>
     Hey, my name is Joshua Keith Pearson, thanks for stopping by to check out my
     work here. Feel free to go on to my about, goals, or hobbies page through
-    the side menu.
+    the side menu. There you will find timelines, contact forms, and general
+    information, alongside current projects!
   </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary" (click)="toggleSidenav()">
+      Open Sidenav
+    </button>
+  </mat-card-actions>
 </mat-card>

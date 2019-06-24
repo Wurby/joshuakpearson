@@ -33,7 +33,7 @@
 
           <mat-divider [vertical]="true"> </mat-divider>
 
-          <button mat-stroked-button color="primary" matStepperNext>
+          <button mat-stroked-button color="accent" matStepperNext>
             Next
           </button>
         </mat-toolbar-row>
@@ -55,11 +55,11 @@
           <span></span>
           <span style="flex: 1 3 auto"></span>
 
-          <button mat-stroked-button color="primary" matStepperPrevious>
+          <button mat-stroked-button color="accent" matStepperPrevious>
             Previous
           </button>
-          <mat-divider [vertical]="true"> </mat-divider>
-          <button mat-stroked-button color="primary" matStepperNext>
+          <button mat-button disabled></button>
+          <button mat-stroked-button color="accent" matStepperNext>
             Next
           </button>
         </mat-toolbar-row>
@@ -81,11 +81,11 @@
           <span></span>
           <span style="flex: 1 3 auto"></span>
 
-          <button mat-stroked-button color="primary" matStepperPrevious>
+          <button mat-stroked-button color="accent" matStepperPrevious>
             Previous
           </button>
-          <mat-divider [vertical]="true"> </mat-divider>
-          <button mat-stroked-button color="primary" matStepperNext>
+          <button mat-button disabled></button>
+          <button mat-stroked-button color="accent" matStepperNext>
             Next
           </button>
         </mat-toolbar-row>
@@ -110,12 +110,12 @@
           <span></span>
           <span style="flex: 1 3 auto"></span>
 
-          <button mat-stroked-button color="primary" matStepperPrevious>
+          <button mat-stroked-button color="accent" matStepperPrevious>
             Previous
           </button>
-          <mat-divider [vertical]="true"> </mat-divider>
-          <button mat-stroked-button color="primary" (click)="reset(stepper)">
-            Present Year
+          <button mat-button disabled></button>
+          <button mat-stroked-button color="accent" (click)="reset(stepper)">
+            Present
           </button>
         </mat-toolbar-row>
       </mat-step>

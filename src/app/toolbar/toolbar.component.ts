@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import { Component, OnInit } from '@angular/core';
+
+import { SidenavControlService } from '../sidenav-control.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,9 +8,11 @@ import { MatSidenav } from '@angular/material';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent implements OnInit {
-  @Input() inputSideNav: MatSidenav;
+  constructor(private sidenavService: SidenavControlService) {}
 
-  constructor() {}
+  toggleSidenav() {
+    this.sidenavService.toggle();
+  }
 
   ngOnInit() {}
 }

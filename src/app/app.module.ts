@@ -9,8 +9,8 @@ import {
   MatDividerModule,
   MatTabsModule,
   MatStepperModule,
-  MatIcon,
   MatIconModule,
+  MatTreeModule,
 } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +29,8 @@ import { PhysicalComponent } from './contact/physical/physical.component';
 import { FormComponent } from './contact/form/form.component';
 import { ProfessionalComponent } from './projects/professional/professional.component';
 import { PersonalComponent } from './projects/personal/personal.component';
+import { TreeComponent } from './about/hobbies/tree/tree.component';
+import { SidenavControlService } from './sidenav-control.service';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { PersonalComponent } from './projects/personal/personal.component';
     FormComponent,
     ProfessionalComponent,
     PersonalComponent,
+    TreeComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +64,7 @@ import { PersonalComponent } from './projects/personal/personal.component';
     MatTabsModule,
     MatStepperModule,
     MatIconModule,
+    MatTreeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
