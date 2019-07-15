@@ -11,6 +11,8 @@ import {
   MatStepperModule,
   MatIconModule,
   MatTreeModule,
+  MatFormFieldModule,
+  MatInputModule,
 } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,7 +32,7 @@ import { FormComponent } from './contact/form/form.component';
 import { ProfessionalComponent } from './projects/professional/professional.component';
 import { PersonalComponent } from './projects/personal/personal.component';
 import { TreeComponent } from './about/hobbies/tree/tree.component';
-import { SidenavControlService } from './sidenav-control.service';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -65,6 +67,10 @@ import { SidenavControlService } from './sidenav-control.service';
     MatStepperModule,
     MatIconModule,
     MatTreeModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

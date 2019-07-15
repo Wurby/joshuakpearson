@@ -49,7 +49,7 @@ a {
 // desktop view
 @media (min-width: 768px) {
   .default-card {
-    width: 40%;
+    width: 50%;
     margin: 1em auto;
     @include mat-elevation(4);
   }
@@ -58,7 +58,7 @@ a {
 // mobile view
 @media (max-width: 767px) {
   .default-card {
-    width: 70%;
+    width: 85%;
     margin: 1em auto;
     @include mat-elevation(4);
   }
