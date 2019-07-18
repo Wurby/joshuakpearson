@@ -9,6 +9,7 @@ import { FormControl, Validators } from '@angular/forms';
 export class FormComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   name = new FormControl('', [Validators.required]);
+  message = new FormControl('', [Validators.required]);
 
   constructor() {}
 
@@ -16,12 +17,25 @@ export class FormComponent implements OnInit {
     return this.email.hasError('required')
       ? 'You must enter a value'
       : this.email.hasError('email')
-      ? 'Not a valid email'
+      ? 'Not a valid email!'
       : '';
   }
 
   getNameErrorMessage() {
-    return this.name.hasError('required') ? 'You must enter your name' : '';
+    return this.name.hasError('required') ? 'You must enter your name!' : '';
   }
+
+  getMessageErrorMessage() {
+    return this.message.hasError('required') ? 'You must enter a message!' : '';
+  }
+
+  testMessage() {
+    this.email.reset();
+    this.name.reset();
+    this.message.reset();
+  }
+
+  sendEmail() {}
+
   ngOnInit() {}
 }

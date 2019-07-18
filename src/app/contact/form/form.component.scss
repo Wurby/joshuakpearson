@@ -3,6 +3,15 @@
   flex-direction: column;
 }
 
-.form-container > * {
+.form-container > textarea {
   width: 100%;
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+}
+
+.input-container > mat-form-field {
+  flex: 1;
 }
