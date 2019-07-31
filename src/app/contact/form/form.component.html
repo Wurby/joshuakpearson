@@ -1,62 +1,69 @@
 <mat-card class="default-card">
-  <mat-card-header>
-    <mat-card-title>Send Me a Message</mat-card-title>
-    <mat-card-subtitle
-      >Send me either an email or a test message.</mat-card-subtitle
-    >
-  </mat-card-header>
-  <mat-card-content>
-    <div class="form-container">
-      <div class="input-container">
-        <mat-form-field>
-          <input
-            matInput
-            placeholder="Enter your email"
-            [formControl]="email"
-            required
-          />
-          <mat-error *ngIf="email.invalid">{{
-            getEmailErrorMessage()
-          }}</mat-error>
-        </mat-form-field>
+  <form [formGroup]="contactForm" (ngSubmit)="sendEmail()">
+    <mat-card-header>
+      <mat-card-title>Send Me a Message</mat-card-title>
+      <mat-card-subtitle
+        >Send me either an email or a test message.</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <div class="form-container">
+        <div class="input-container">
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Enter your email"
+              formControlName="email"
+              required
+            />
+            <mat-error *ngIf="contactForm.invalid">{{
+              getEmailErrorMessage()
+            }}</mat-error>
+          </mat-form-field>
 
-        <button mat-button disabled></button>
+          <button mat-button disabled></button>
 
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Enter your name"
+              formControlName="name"
+              required
+            />
+            <mat-error *ngIf="contactForm.invalid">{{
+              getNameErrorMessage()
+            }}</mat-error>
+          </mat-form-field>
+        </div>
         <mat-form-field>
-          <input
+          <textarea
             matInput
-            placeholder="Enter your name"
-            [formControl]="name"
+            placeholder="Send me a message."
+            formControlName="message"
             required
-          />
-          <mat-error *ngIf="name.invalid">{{
-            getNameErrorMessage()
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="15"
+          ></textarea>
+          <mat-error *ngIf="contactForm.invalid">{{
+            getMessageErrorMessage()
           }}</mat-error>
         </mat-form-field>
       </div>
-      <mat-form-field>
-        <textarea
-          matInput
-          placeholder="Send me a message."
-          [formControl]="message"
-          required
-          cdkTextareaAutosize
-          #autosize="cdkTextareaAutosize"
-          cdkAutosizeMinRows="1"
-          cdkAutosizeMaxRows="15"
-        ></textarea>
-        <mat-error *ngIf="message.invalid">{{
-          getMessageErrorMessage()
-        }}</mat-error>
-      </mat-form-field>
-    </div>
-  </mat-card-content>
-  <mat-card-actions align="end">
-    <button mat-raised-button color="primary" (click)="testMessage()">
-      Test Message
-    </button>
-    <button mat-raised-button color="primary" (click)="sendEmail()">
-      Send
-    </button>
-  </mat-card-actions>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary" (click)="clear()">
+        Clear
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!contactForm.valid || submitted"
+      >
+        {{ sendButton }}
+      </button>
+    </mat-card-actions>
+  </form>
 </mat-card>
