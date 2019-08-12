@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
+import { HttpService } from './../../http.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Observable, Subscribable } from 'rxjs';
 
 @Component({
   selector: 'app-form',
@@ -16,8 +18,10 @@ export class FormComponent implements OnInit {
 
   submitted = false;
   sendButton = 'Send';
+  serverResponseStatus = false;
+  serverResponse = '';
 
-  constructor() {}
+  constructor(private sendMessageService: HttpService) {}
 
   getEmailErrorMessage() {
     return this.contactForm.get('email').hasError('required')
@@ -44,11 +48,22 @@ export class FormComponent implements OnInit {
   }
 
   sendEmail() {
-    console.warn(this.contactForm.value);
+    const formData = this.contactForm.value;
+    console.warn({ 'Form data': formData });
 
-    this.contactForm.reset();
+    this.sendMessageService.sendMessage(formData).subscribe(
+      response => {
+        console.log('Success: ', response);
+        this.serverResponse = response.message;
+        this.serverResponseStatus = true;
+      },
+      error => {
+        console.error('Failure: ', error);
+        this.serverResponse = error;
+        this.serverResponseStatus = true;
+      }
+    );
     this.submitted = true;
-    this.sendButton = 'Sent';
   }
 
   ngOnInit() {}
