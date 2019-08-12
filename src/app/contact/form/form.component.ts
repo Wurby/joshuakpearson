@@ -17,7 +17,7 @@ export class FormComponent implements OnInit {
   submitted = false;
   sendButton = 'Send';
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
   getEmailErrorMessage() {
     return this.contactForm.get('email').hasError('required')
@@ -45,20 +45,6 @@ export class FormComponent implements OnInit {
 
   sendEmail() {
     console.warn(this.contactForm.value);
-
-    const body = new HttpParams()
-      .set('email', this.contactForm.get('email').value)
-      .set('name', this.contactForm.get('name').value)
-      .set('message', this.contactForm.get('message').value);
-
-    this.http
-      .post('joshuakpearson.com:4201/api/form', body.toString(), {
-        headers: new HttpHeaders().set(
-          'Content-Type',
-          'application/x-www-form-urlencoded'
-        ),
-      })
-      .subscribe(res => console.log(res), err => console.log(err));
 
     this.contactForm.reset();
     this.submitted = true;
