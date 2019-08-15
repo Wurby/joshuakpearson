@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class HttpService {
-  apiUrl = 'http://joshuakpearson.com:8443/api/form';
+  apiUrl = 'https://joshuakpearson.com:8443/api/form';
 
   constructor(private http: HttpClient) {}
 
